@@ -1,0 +1,50 @@
+create table student(
+  studentid number(3),
+  studentFirstname varchar(7),
+  studentLastname varchar(7),
+  Age number(2),
+  Level number(10),
+  PhoneNumber number(2),
+  pathway varchar(20),
+  Email varchar(15),
+  subjectname varchar(50),
+  constraint fk_Subject foreign key (subjectname) references supplierD (subname) 
+  );
+  insert into student VALUEs(1,'Ahmed','Salem',15,1,0501245780,'Natural sciences','Ahmed2@gmail.com','Mathematics AND Biology AND Physics AND Enghlish');
+  insert into student VALUEs(2,'Ajood','Ali',17,5,0542367971,'Natural scinces','ali@gmail.com','Mathematics AND Biology AND Physics AND Chemistry AND Enghlish');
+  insert into student VALUEs(3,'Bassem','Badr',16,3,0539714285,'Natural scinces','bassem@gmail.com','Mathematics AND Physics AND Chemistry AND Enghlish');
+  insert into student VALUEs(4,'Badr','Mohammed',15,1,0505835773,'Natural scinces','Badr@gmail.com','Mathematics AND Physics AND Chemistry');
+  insert into student VALUEs(5,'Thamer','Ahmad',18,6,0551286253,'Natural scinces','Thm29@gmail.com','Biology AND Physics AND Chemistry AND Enghlish');
+  SELECT * from student;
+  SELECT studentfirstname,studentlastname,subjectname from student;
+  SELECT studentfirstname,level,subjectname from student;
+  
+create table TEACHER(
+  TeacherID number(6) UNIQUE,
+  TeacherName number(10),
+  Age number(10),
+  Email varchar(15),
+  officeNumber number(4),
+  subjectname varchar(10),
+  constraint fk_Subject1 foreign key (subjectname) references Subject (Subname) 
+);
+   insert into TEACHER values(2936,'Osama Madkhali',28,'Osama380@hotmail.com',28,'Mathematics');
+   insert into TEACHER values(2534,'Makki Khobarani',26,'Makki@hotmail.com',26,'Biology');
+   insert into TEACHER values(2431,'Faisal Jaberi',30,'Jaberi@hotmail.com',30,'Physics');
+   insert into TEACHER values(2137,'Luay Saleh',32,'Luay@hotmail.com',32,'Chemistry');
+   insert into TEACHER values(2735,'Mohamed Nour',40,'Nour@hotmail.com',40,'Enghlish');
+   SELECT Teachername,officenumber,subjectname from TEACHER;
+   SELECT teacherid,Teachername,officenumber,subjectname from TEACHER;
+   select * FROM TEACHER;
+   
+   
+create table Subject(
+  Subjectcode vachar(8),
+  Subjectname varchar(10)PRIMARY KEY);
+  insert into Subject VALUES('MATM-105','Mathematics');
+  insert into Subject VALUES('BiO-152','Biology');
+  insert into Subject VALUES('PHY-102','Physics');
+  insert into Subject VALUES('CHE-261','Chemistry');
+  insert into Subject VALUES('E-1','Enghlish');
+  select * FROM Subject;
+  drop table Subject;
